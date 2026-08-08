@@ -93,3 +93,14 @@ The final system provides:
 * Manual movement controls
 * Voice-to-text control
 * Arabic and English voice commands & UI
+
+---
+
+# 👩‍💻 Author
+
+**Nassebah Al-Dubayyan**
+
+Computer Science Student
+<p align="center">
+⭐ If you found this project interesting, consider giving it a star!
+</p>
