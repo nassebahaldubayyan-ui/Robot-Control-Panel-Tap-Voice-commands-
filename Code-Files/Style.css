@@ -1,0 +1,191 @@
+:root {
+  --bg: #FAF7F2;
+  --panel: #FFFFFF;
+  --clay: #C97B5E;
+  --clay-dark: #B0603F;
+  --sage: #8FA98D;
+  --sage-dark: #71906E;
+  --ink: #33302E;
+  --muted: #8A8480;
+  --shadow-btn: #E4DDD3;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  background: var(--bg);
+  font-family: 'Tajawal', 'Nunito', sans-serif;
+  color: var(--ink);
+  padding: 30px 16px;
+}
+
+.device {
+  background: var(--panel);
+  border-radius: 32px;
+  padding: 36px 32px 30px;
+  box-shadow: 0 20px 40px -12px rgba(51, 48, 46, 0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 380px;
+}
+
+h1 {
+  font-family: 'Nunito', sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+  margin: 0 0 4px;
+  color: var(--ink);
+}
+
+.subtitle {
+  font-size: 13px;
+  color: var(--muted);
+  margin: 0 0 26px;
+}
+
+.control-pad {
+  display: grid;
+  grid-template-columns: repeat(3, 84px);
+  grid-template-rows: repeat(3, 84px);
+  gap: 14px;
+  justify-items: center;
+  align-items: center;
+  direction: ltr;
+}
+
+.btn {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 22px;
+  background: var(--bg);
+  font-family: 'Nunito', sans-serif;
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--clay-dark);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 0 var(--shadow-btn), 0 8px 14px rgba(51,48,46,0.10);
+  transition: transform 0.08s ease, box-shadow 0.08s ease;
+}
+
+.btn:active {
+  transform: translateY(6px);
+  box-shadow: 0 0 0 var(--shadow-btn), 0 2px 6px rgba(51,48,46,0.10);
+}
+
+.btn.stop {
+  background: var(--clay);
+  color: #fff;
+  box-shadow: 0 6px 0 var(--clay-dark), 0 8px 14px rgba(201,123,94,0.35);
+}
+.btn.stop:active {
+  box-shadow: 0 0 0 var(--clay-dark), 0 2px 6px rgba(201,123,94,0.35);
+}
+
+.forward  { grid-column: 2; grid-row: 1; }
+.left     { grid-column: 1; grid-row: 2; }
+.stop     { grid-column: 2; grid-row: 2; }
+.right    { grid-column: 3; grid-row: 2; }
+.backward { grid-column: 2; grid-row: 3; }
+
+#status {
+  margin-top: 24px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--muted);
+  text-align: center;
+  min-height: 18px;
+}
+
+.divider {
+  width: 100%;
+  height: 1px;
+  background: var(--shadow-btn);
+  margin: 24px 0 20px;
+}
+
+.voice-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+}
+
+.lang-toggle {
+  display: flex;
+  gap: 8px;
+  background: var(--bg);
+  padding: 4px;
+  border-radius: 14px;
+}
+
+.lang-btn {
+  padding: 7px 18px;
+  border-radius: 10px;
+  border: none;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  font-family: 'Tajawal', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  transition: 0.15s ease;
+}
+
+.lang-btn.active {
+  background: var(--panel);
+  color: var(--ink);
+  box-shadow: 0 2px 6px rgba(51,48,46,0.12);
+}
+
+.mic-btn {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  border: none;
+  background: var(--sage);
+  font-size: 26px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  box-shadow: 0 6px 0 var(--sage-dark), 0 8px 14px rgba(143,169,141,0.35);
+  transition: transform 0.08s ease, box-shadow 0.08s ease, background 0.15s ease;
+}
+
+.mic-btn:active {
+  transform: translateY(6px);
+  box-shadow: 0 0 0 var(--sage-dark), 0 2px 6px rgba(143,169,141,0.35);
+}
+
+.mic-btn.listening {
+  background: var(--clay);
+  box-shadow: 0 6px 0 var(--clay-dark), 0 0 0 0 rgba(201,123,94,0.4);
+  animation: pulse 1.4s infinite;
+}
+
+@keyframes pulse {
+  0%   { box-shadow: 0 6px 0 var(--clay-dark), 0 0 0 0 rgba(201,123,94,0.35); }
+  70%  { box-shadow: 0 6px 0 var(--clay-dark), 0 0 0 14px rgba(201,123,94,0); }
+  100% { box-shadow: 0 6px 0 var(--clay-dark), 0 0 0 0 rgba(201,123,94,0); }
+}
+
+#heard {
+  font-size: 13px;
+  color: var(--muted);
+  min-height: 16px;
+  text-align: center;
+}
