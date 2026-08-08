@@ -12,6 +12,13 @@ The project was developed through several stages, starting with fixing the origi
 
 [**Open the Robot Control Panel**](https://nassebah.infinityfreeapp.com/ControlPanel/)
 
+## Robot State
+
+The current robot command can be viewed through the `get_state.php` endpoint:
+
+[**View Robot State**](https://nassebah.infinityfreeapp.com/ControlPanel/get_state.php)
+
+
 ---
 
 ## 1. Control Panel Setup
@@ -20,13 +27,13 @@ The project started with a basic robot control panel containing buttons for move
 
 The provided files were uploaded to InfinityFree. Initially, pressing a button resulted in a **"Failed to connect to server"** error.
 
-![Initial Problem](images/problem.png)
+<img src="images/problem.png" width="500">
 
 The problem was caused by the database not being set up. I used `setup.sql` in phpMyAdmin to create the `robot_state` table and configured the database credentials in `db.php`.
 
 After this, the control buttons successfully updated the robot's command in the database.
 
-![Control Panel Working](images/control-panel.png)
+<img src="images/control-panel.png" width="500">
 
 ---
 
@@ -36,7 +43,7 @@ After getting the manual controls working, I added a microphone function to allo
 
 The browser's **Web Speech API** was used to convert speech into text. The recognized text is then matched with predefined Arabic and English movement commands and sent using the same command system as the control buttons.
 
-![Voice Control](images/voice-control.png)
+<img src="images/voice-control.png" width="500">
 
 The voice control was designed to support both Arabic and English commands.
 
@@ -70,11 +77,11 @@ Voice recognition also follows the selected interface language:
 
 ### English Interface
 
-![English Interface](images/english.png)
+<img src="images/english.png" width="500">
 
 ### Arabic Interface
 
-![Arabic Interface](images/arabic.png)
+<img src="images/arabic.png" width="500">
 
 ---
 
