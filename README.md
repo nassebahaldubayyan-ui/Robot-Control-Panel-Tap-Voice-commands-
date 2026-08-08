@@ -77,11 +77,11 @@ Voice recognition also follows the selected interface language:
 
 ### English Interface
 
-<img src="images/english.png" width="500">
+<img src="images/english.png" width="300">
 
 ### Arabic Interface
 
-<img src="images/arabic.png" width="500">
+<img src="images/arabic.png" width="300">
 
 ---
 
